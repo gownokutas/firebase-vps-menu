@@ -1,11 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-# =============================
-# Enhanced Multi-VM Manager
-# =============================
+# Copyright (c) 2025 Jakub Orłowski
+# Licensed under the MIT License. See LICENSE for details.
 
-# Function to display header
+
 display_header() {
     clear
     cat << "EOF"
@@ -27,7 +26,6 @@ EOF
     echo
 }
 
-# Function to display colored output
 print_status() {
     local type=$1
     local message=$2
@@ -42,7 +40,6 @@ print_status() {
     esac
 }
 
-# Function to validate input
 validate_input() {
     local type=$1
     local value=$2
@@ -82,7 +79,6 @@ validate_input() {
     return 0
 }
 
-# Function to check dependencies
 check_dependencies() {
     local deps=("qemu-system-x86_64" "wget" "cloud-localds" "qemu-img")
     local missing_deps=()
@@ -116,7 +112,6 @@ load_vm_config() {
     local config_file="$VM_DIR/$vm_name.conf"
     
     if [[ -f "$config_file" ]]; then
-        # Clear previous variables
         unset VM_NAME OS_TYPE CODENAME IMG_URL HOSTNAME USERNAME PASSWORD
         unset DISK_SIZE MEMORY CPUS SSH_PORT GUI_MODE PORT_FORWARDS IMG_FILE SEED_FILE CREATED
         
@@ -180,7 +175,6 @@ create_new_vm() {
         read -p "$(print_status "INPUT" "Wpisz nazwe VM'ki (domyslnie: $DEFAULT_HOSTNAME): ")" VM_NAME
         VM_NAME="${VM_NAME:-$DEFAULT_HOSTNAME}"
         if validate_input "name" "$VM_NAME"; then
-            # Check if VM name already exists
             if [[ -f "$VM_DIR/$VM_NAME.conf" ]]; then
                 print_status "ERROR" "VM'ka o nazwie '$VM_NAME' juz istnieje"
             else
