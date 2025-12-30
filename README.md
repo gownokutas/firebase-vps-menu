@@ -19,12 +19,12 @@ Ten skrypt ma na celu uruchomienie zaawansowane menu do narzędzia QEMU, można 
 Debian / Ubuntu:
 
   Zależności do działania skryptu i prawidłowego działanie
-    ```sh
+    ```
     sudo apt update && sudo apt install qemu-system cloud-image-utils wget curl git -y
     ```
 
   Zależności do działania trybu GUI
-    ```sh
+    ```
     sudo apt update && xrdp tigervnc-standalone-server tigervnc-xorg-extension -y
     ```
 Google Firebase:
@@ -38,11 +38,11 @@ Google Firebase:
 
 ## Pobierz i uruchom skrypt
  Uruchom Skrypt za pomocą narzędzia curl:
-    ```sh
+    ```
     bash <(curl -sSf https://raw.githubusercontent.com/gownokutas/firebase-vps-menu/refs/heads/main/vps.sh)
     ```
  Uruchom skrypt za pomocą narzędzia git
-    ```sh
+    ```
     git clone https://github.com/gownokutas/firebase-vps-menu.git && cd firebase-vps-menu && clear && bash vps.sh
     ```
 
