@@ -20,15 +20,12 @@ Debian / Ubuntu:
 
   Zależności do działania skryptu i prawidłowego działania
   
-    ```
     sudo apt update && sudo apt install qemu-system cloud-image-utils wget curl git -y
-    ```
 
   Zależności do działania trybu GUI
   
-    ```
     sudo apt update && xrdp tigervnc-standalone-server tigervnc-xorg-extension -y
-    ```
+    
 Google Firebase:
 
     1. Na stronie https://idx.google.com po zalogowaniu na konto google, kliknij przycisk Import Repo
@@ -41,15 +38,11 @@ Google Firebase:
 ## Pobierz i uruchom skrypt
  Uruchom Skrypt za pomocą narzędzia curl:
  
-    ```
     bash <(curl -sSf https://raw.githubusercontent.com/linuxiarznaetacie/firebase-vps-menu/refs/heads/main/vps.sh)
-    ```
 
  Uruchom skrypt za pomocą narzędzia git
  
-    ```
     git clone https://github.com/linuxiarznaetacie/firebase-vps-menu.git && cd firebase-vps-menu && clear && bash vps.sh
-    ```
 
 ## Rozwiązania na problemy które mogą wyniknąć:
 
